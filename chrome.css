@@ -1,0 +1,127 @@
+/* =====================================================================
+   JurisBook federated chrome — STYLES
+   Self-contained: owned by each repo (canonical in jurisbook_public_site/chrome/).
+   Scope: header (#main-header + mobile menu), footer (#contacto), nav dropdowns.
+   Injected at build time by vite-plugin-chrome.ts alongside the partials.
+   --brand-orange / --brand-teal are defined here so the hand-written nav
+   rules resolve correctly (previously referenced but undefined in the
+   inline page CSS). Values mirror the Tailwind tokens in tailwind.config.
+   ===================================================================== */
+
+:root {
+    --header-offset: 92px;
+    --brand-orange: #FDB953; /* mirrors tailwind brand.orange */
+    --brand-teal: #009688;   /* mirrors tailwind brand.teal */
+}
+
+/* Pin chrome roots to Inter so the header/footer render identically across
+   repos, regardless of each page's body font (e.g. the store body is Manrope).
+   Self-contained by design: the chrome must not depend on page-level typography. */
+#main-header, footer#contacto { font-family: 'Inter', sans-serif !important; }
+
+/* Sticky header glass */
+header { transition: all 0.3s ease-in-out; }
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Anchor sections clear the fixed header. Generic so any page's
+   section ids (#inicio, #nosotros, #soluciones, #testimonios, ...)
+   land in the right place without per-page rules. */
+section[id] {
+    scroll-margin-top: calc(var(--header-offset) - 0.75rem);
+}
+
+/* Nav secondary links */
+.nav-secondary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    transform-origin: center;
+    line-height: 1;
+    transition: color 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+.nav-secondary-link:hover {
+    color: var(--brand-orange);
+    transform: translateY(-1px);
+}
+
+/* Dropdown wrappers */
+.nav-solutions {
+    position: relative;
+}
+.nav-solutions::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: max(100%, 14rem);
+    height: 0.9rem;
+    transform: translateX(-50%);
+}
+.nav-solutions-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.2rem 0;
+    position: relative;
+}
+.nav-solutions-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.55rem;
+    height: 2px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, transparent 0%, rgba(244, 181, 65, 0.78) 50%, transparent 100%);
+    opacity: 0;
+    transform: scaleX(0.7);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.nav-solutions-button:hover,
+.nav-solutions:focus-within .nav-solutions-button,
+.nav-solutions.is-open .nav-solutions-button {
+    color: var(--brand-orange);
+}
+.nav-solutions-button:hover::after,
+.nav-solutions:focus-within .nav-solutions-button::after,
+.nav-solutions.is-open .nav-solutions-button::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+.nav-solutions:hover .nav-dropdown-menu,
+.nav-solutions:focus-within .nav-dropdown-menu,
+.nav-solutions.is-open .nav-dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+}
+.nav-solutions-arrow {
+    display: inline-block;
+    margin-left: 0.35rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #fdb953;
+    transform: translateY(-1px);
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+.nav-solutions-button[aria-expanded="true"] .nav-solutions-arrow,
+.nav-solutions.is-open .nav-solutions-arrow {
+    transform: rotate(180deg) translateY(1px);
+}

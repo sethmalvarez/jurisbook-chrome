@@ -1,0 +1,63 @@
+<header id="main-header" class="fixed w-full top-0 z-50 bg-brand-black/90 backdrop-blur-md py-3 border-b border-white/10 shadow-[0_12px_30px_rgba(0,0,0,0.35)] transition-all duration-300">
+    <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold text-white flex items-center gap-2 tracking-tight shrink-0">
+            <img src="__CHROME_LOGO_SRC__" alt="JurisBook" class="h-14 w-auto">
+        </a>
+        <div class="flex items-center gap-4 lg:gap-8">
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-[15px] font-medium text-slate-300">
+                <a href="/#inicio" class="nav-secondary-link" data-i18n="nav_home">Inicio</a>
+                <div class="nav-solutions" id="company-menu-wrapper">
+                    <button id="company-menu-button" type="button" class="nav-solutions-button hover:text-brand-orange transition duration-300" aria-expanded="false" aria-controls="company-menu" aria-haspopup="true"><span data-i18n="nav_company">Nuestra empresa</span> <span class="nav-solutions-arrow" aria-hidden="true">&#9662;</span></button>
+                    <div id="company-menu" class="nav-dropdown-menu invisible absolute left-1/2 top-full z-30 mt-3 w-56 -translate-x-1/2 translate-y-2 rounded-2xl border border-white/10 bg-brand-dark/95 p-2 opacity-0 pointer-events-none shadow-2xl backdrop-blur-xl transition duration-200">
+                        <a href="/#nosotros" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5 hover:text-brand-orange transition" data-i18n="nav_company_about">Sobre nosotros</a>
+                        <a href="/#testimonios" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5 hover:text-brand-orange transition" data-i18n="nav_company_stories">Historias</a>
+                        <a href="https://www.linkedin.com/company/jurisbook/" target="_blank" rel="noopener noreferrer" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5 hover:text-brand-orange transition" data-i18n="nav_company_news">Noticias</a>
+                    </div>
+                </div>
+                <div class="nav-solutions" id="solutions-menu-wrapper">
+                    <button id="solutions-menu-button" type="button" class="nav-solutions-button hover:text-brand-orange transition duration-300" aria-expanded="false" aria-controls="solutions-menu" aria-haspopup="true"><span data-i18n="nav_solutions">Soluciones</span> <span class="nav-solutions-arrow" aria-hidden="true">&#9662;</span></button>
+                    <div id="solutions-menu" class="nav-dropdown-menu invisible absolute left-1/2 top-full z-30 mt-3 w-56 -translate-x-1/2 translate-y-2 rounded-2xl border border-white/10 bg-brand-dark/95 p-2 opacity-0 pointer-events-none shadow-2xl backdrop-blur-xl transition duration-200">
+                        <a href="/jb-directory.html" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5 hover:text-brand-orange transition" data-i18n="nav_solutions_directory">JB Directory</a>
+                        <a href="/jb-lex-ai.html" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5 hover:text-brand-orange transition" data-i18n="nav_solutions_jblex">JB-Lex AI</a>
+                        <a href="/jb-publicista.html" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5 hover:text-brand-orange transition" data-i18n="nav_solutions_automata">JB Publicista</a>
+                        <a href="/jb-orchestrator.html" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5 hover:text-brand-orange transition" data-i18n="nav_solutions_orchestrator">JB Orchestrator</a>
+                    </div>
+                </div>
+
+                <a href="#contacto" class="nav-secondary-link" data-i18n="nav_contact">Contacto</a>
+
+            </nav>
+            <a href="https://wa.me/50670881909?text=Hola%2C%20quiero%20hablar%20con%20un%20especialista%20sobre%20JurisBook." target="_blank" rel="noopener noreferrer" class="hidden lg:inline-flex items-center justify-center rounded-full bg-brand-orange px-6 py-2.5 text-sm font-bold text-black hover:bg-white transition shadow-glow whitespace-nowrap" data-i18n="nav_sales">Hablar con un especialista</a>
+
+            <button id="lang-toggle" type="button" class="flex items-center gap-1 text-sm font-bold text-gray-400 hover:text-white transition uppercase border border-gray-700 px-2 py-1 rounded">
+                <span id="lang-display">ES</span> <i class="fas fa-globe"></i>
+            </button>
+            <!-- @chrome-header-extras -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="bg-brand-dark border-t border-white/10 md:hidden absolute w-full left-0 top-full shadow-2xl hidden">
+        <nav class="flex flex-col p-6 space-y-4 font-semibold text-white uppercase text-sm">
+            <a href="/#inicio" class="hover:text-brand-orange" data-i18n="nav_home">Inicio</a>
+            <div class="space-y-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
+                <span class="text-[11px] tracking-[0.2em] text-slate-400" data-i18n="nav_company">Nuestra empresa</span>
+                <a href="/#nosotros" class="block hover:text-brand-orange" data-i18n="nav_company_about">Sobre nosotros</a>
+                <a href="/#testimonios" class="block hover:text-brand-orange" data-i18n="nav_company_stories">Historias</a>
+                <a href="https://www.linkedin.com/company/jurisbook/" target="_blank" rel="noopener noreferrer" class="block hover:text-brand-orange" data-i18n="nav_company_news">Noticias</a>
+            </div>
+            <div class="space-y-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
+                <a href="https://store.jurisbook.com/" class="text-[11px] tracking-[0.2em] text-slate-400 hover:text-brand-orange" data-i18n="nav_solutions">Soluciones</a>
+                <a href="/jb-directory.html" class="block hover:text-brand-orange" data-i18n="nav_solutions_directory">JB Directory</a>
+                <a href="/jb-lex-ai.html" class="block hover:text-brand-orange" data-i18n="nav_solutions_jblex">JB-Lex AI</a>
+                <a href="/jb-publicista.html" class="block hover:text-brand-orange" data-i18n="nav_solutions_automata">JB Publicista</a>
+                <a href="/jb-orchestrator.html" class="block hover:text-brand-orange" data-i18n="nav_solutions_orchestrator">JB Orchestrator</a>
+            </div>
+
+
+            <a href="#contacto" class="hover:text-brand-orange" data-i18n="nav_contact">Contacto</a>
+
+            <a href="https://wa.me/50670881909?text=Hola%2C%20quiero%20hablar%20con%20un%20especialista%20sobre%20JurisBook." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-xl bg-brand-orange px-4 py-3 text-center font-bold text-black hover:bg-white transition" data-i18n="nav_sales">Hablar con un especialista</a>
+        </nav>
+    </div>
+</header>
