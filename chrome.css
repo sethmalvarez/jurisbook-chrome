@@ -1,6 +1,6 @@
 /* =====================================================================
    JurisBook federated chrome — STYLES
-   Self-contained: owned by each repo (canonical in jurisbook_public_site/chrome/).
+   Canonical source: this repo (jurisbook-chrome), consumed by apps via git submodule at <app>/chrome/.
    Scope: header (#main-header + mobile menu), footer (#contacto), nav dropdowns.
    Injected at build time by vite-plugin-chrome.ts alongside the partials.
    --brand-orange / --brand-teal are defined here so the hand-written nav

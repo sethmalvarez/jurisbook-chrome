@@ -1,5 +1,5 @@
 {
-  "_comment": "JurisBook federated chrome i18n. Injected as window.__CHROME_I18N__ by vite-plugin-chrome.ts. Applied to elements inside #main-header and footer#contacto by chrome.js. Owned by each repo (canonical in jurisbook_public_site/chrome/).",
+  "_comment": "JurisBook federated chrome i18n. Injected as window.__CHROME_I18N__ by vite-plugin-chrome.ts. Applied to elements inside #main-header and footer#contacto by chrome.js. Canonical source: this repo (jurisbook-chrome), consumed by apps via git submodule at <app>/chrome/.",
   "es": {
     "nav_home": "Inicio",
     "nav_company": "Nuestra empresa",

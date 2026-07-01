@@ -1,6 +1,6 @@
 /*
  * JurisBook federated chrome — BEHAVIOR + i18n application.
- * Self-contained: owned by each repo (canonical in jurisbook_public_site/chrome/).
+ * Canonical source: this repo (jurisbook-chrome), consumed by apps via git submodule at <app>/chrome/.
  * Inlined into each page at build time by vite-plugin-chrome.ts.
  *
  * Contract:
