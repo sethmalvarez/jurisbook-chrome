@@ -19,7 +19,7 @@ copy-pasted `chrome/` folders that drift between repos.
 From the app repo root:
 
 ```bash
-git submodule add https://github.com/sethmalvarez/jurisbook-chrome.git chrome
+git submodule add https://github.com/sethmaroun/jurisbook-chrome.git chrome
 git commit -m "Add jurisbook-chrome submodule (shared header/footer)"
 ```
 
